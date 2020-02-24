@@ -69,4 +69,5 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'paperclip', '~> 5.1'
 gem 'simple_form'
 gem 'slim'
+gem 'devise'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

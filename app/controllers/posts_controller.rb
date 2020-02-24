@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, except: %i[index new create]
+  before_action :set_post, except: [:index, :new, :create]
 
   def new
     @post = Post.new
