@@ -1,0 +1,6 @@
+= simple_form_for @post do |f|
+  = f.input :title
+  = f.file_field :image
+  = f.input :describe
+  = f.input :content
+  = f.button :submit, class: "btn btn-md btn-primary"
