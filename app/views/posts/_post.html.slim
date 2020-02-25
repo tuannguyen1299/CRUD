@@ -10,6 +10,8 @@ tr
   td
     = post.content
   td
+    = post.user.email
+  td
     = link_to t(".delete"), post_path(post.id), method: :delete, data: { confirm: t(".you_sure") }
     br
     = link_to t(".edit"), edit_post_path(post.id)

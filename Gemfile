@@ -70,4 +70,5 @@ gem 'paperclip', '~> 5.1'
 gem 'simple_form'
 gem 'slim'
 gem 'devise'
+gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
