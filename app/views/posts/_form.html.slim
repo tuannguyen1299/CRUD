@@ -1,4 +1,7 @@
 = simple_form_for @post do |f|
+  -if current_user.admin?
+    h5 active
+    = f.check_box :active ,{:checked=>true}
   = f.input :title
   = f.file_field :image
   = f.input :describe

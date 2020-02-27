@@ -1,0 +1,26 @@
+vi:
+  hello: "Xin Chào"
+  posts:
+    new:
+      new_post: "Bài đăng mới"
+      create_post: "Tạo bài đăng"
+      logout     : "đăng xuất"
+    post:
+      you_sure: "Bạn có chắc"
+      delete  : "xóa"
+      edit    : "sửa"
+      active  : "xác nhận"
+    index:
+      english   : "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+      all_posts : "Tất cả các bài đăng"
+      id        : "id"
+      title     : "Tiêu Đề"
+      image     : "Ảnh"
+      describe  : "Diễn Tả"
+      content   : "Nội Dung"
+      user      : "Người Dùng"
+      option    : "Lựa chọn"
+      new_post  : "Tạo bài đăng"
+      auccess   : "thành công"
+      alert     : "thất bại"
