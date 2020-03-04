@@ -2,8 +2,14 @@
   -if current_user.admin?
     h5 active
     = f.check_box :active ,{:checked=>true}
-  = f.input :title
+  .form-group
+    = t ".title"
+    = f.text_area :title, class: "form-control", rows: 4
   = f.file_field :image
-  = f.input :describe
-  = f.input :content
-  = f.button :submit, class: "btn btn-md btn-primary"
+  .form-group
+    = t ".describe"
+    = f.text_area :describe, class: "form-control", rows: 4
+  .form-group
+    = t ".content"
+    = f.text_area :content, class: "form-control", rows: 4
+  = f.button :submit, class: "btn btn-md btn-danger"

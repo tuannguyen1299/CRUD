@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, except: [:index, :new, :create]
@@ -22,17 +20,18 @@ class PostsController < ApplicationController
   end
 
   def index
+    @search = Post.search params[:q]
     if admin_user
-      @posts = Post.all
+      @posts = @search.result.page(params[:page]).per( Settings.post_per_page)
     else
-      @posts = Post.where(user_id: current_user.id)
+      @posts = @search.result.where(user_id: current_user.id).page(params[:page]).per( Settings.post_per_page)
     end
   end
 
   def edit; end
 
   def update
-    if admin_user
+    if admin_user || set_user
       post_params.delete :active if set_user.present?
       @post.update(post_params)
       flash[:success] = t '.success'
@@ -44,14 +43,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if set_user or admin_user
+    if set_user || admin_user
       @post.destroy
       flash[:success] = t '.success'
-      redirect_to posts_path
     else
       flash[:alert] = t '.alert'
-      redirect_to posts_path
     end
+    redirect_to posts_path
   end
 
   private
