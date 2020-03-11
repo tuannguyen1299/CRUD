@@ -6,10 +6,10 @@ vi:
       create_post: "Tạo bài đăng"
       logout     : "đăng xuất"
     post:
-      you_sure: "Bạn có chắc"
-      delete  : "xóa"
-      edit    : "sửa"
-      active  : "xác nhận"
+      delete    : "xóa"
+      edit      : "sửa"
+      active    : "xác nhận"
+      you_sure  : "Bạn có chắc"
     index:
       english   : "Tiếng Anh"
       vietnamese: "Tiếng Việt"

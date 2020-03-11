@@ -6,10 +6,10 @@
   .form-inline.my-2.my-lg-0
     = search_form_for @search do |f|
       .field
-        = f.text_field :title_cont, class: "form-control mr-sm-2"
-        = f.submit "search", class: "btn btn-outline-success my-2.my-sm-0"
+        = f.text_field :title_cont, class: "form-control mr-sm-2", id: "search"
+        = f.submit "search", class: "btn btn-success my-2.my-sm-0"
   br
-  table.table.table-dark
+  table.table
     thead
       tr
         th = t ".id"
@@ -19,7 +19,11 @@
         th = t ".content"
         th = t ".user"
         th = t ".option"
-    = render @posts
-  = paginate @posts, theme: 'twitter-bootstrap-4'
+    tbody#posts
+      .lish
+        = render @posts
+      = paginate @posts, theme: 'twitter-bootstrap-4'
   = link_to t(".new_post"), new_post_path, class:"btn btn-primary"
   = link_to t(".logout"), destroy_user_session_path, method: :delete, class:"btn btn-danger"
+
+  =render "form"

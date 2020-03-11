@@ -6,10 +6,10 @@ en:
       create_post: "CREATE POST"
       logout     : "logout"
     post:
-      you_sure: "you sure"
-      delete  : "delete"
-      edit    : "edit"
-      active  : "active"
+      delete    : "delete"
+      edit      : "edit"
+      active    : "active"
+      you_sure  : "you sure"
     index:
       english   : "English"
       vietnamese: "VietNamese"
