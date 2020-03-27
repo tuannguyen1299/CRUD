@@ -10,21 +10,25 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    if @post.save
-      flash[:success] = t '.success'
-      redirect_to posts_path
-    else
-      flash[:alert] = t '.alert'
-      render :new
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'post was successfully created.' }
+        format.js   {}
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def index
+    @post = Post.new
     @search = Post.search params[:q]
     if admin_user
-      @posts = @search.result.page(params[:page]).per( Settings.post_per_page)
+      @posts = @search.result.page(params[:page]).per(Settings.post_per_page)
     else
-      @posts = @search.result.where(user_id: current_user.id).page(params[:page]).per( Settings.post_per_page)
+      @posts = @search.result.where(user_id: current_user.id).page(params[:page]).per(Settings.post_per_page)
     end
   end
 
@@ -45,13 +49,15 @@ class PostsController < ApplicationController
   def destroy
     if set_user || admin_user
       @post.destroy
-      flash[:success] = t '.success'
+      respond_to do |format|
+        format.html { redirect_to posts_url, success: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+        format.js   { render layout: false }
+      end
     else
       flash[:alert] = t '.alert'
     end
-    redirect_to posts_path
   end
-
   private
 
   def set_post

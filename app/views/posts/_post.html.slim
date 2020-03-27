@@ -1,17 +1,17 @@
-tbody
-  tr
-    td
-      = post.id
-    td
-      = post.title
-    td
-      img src="#{post.image}"
-    td
-      = post.describe
-    td
-      = post.content
-    td
-      = post.user.email
-    td
-      = link_to t(".delete"), post_path(post.id), method: :delete, data: { confirm: t(".you_sure") }, class:"btn btn-outline-primary"
-      = link_to t(".edit"), edit_post_path(post.id), class:"btn btn-outline-primary"
+tr.post
+  td
+    = post.id
+  td.title
+    = post.title
+  td
+    img src="#{post.image}"
+  td
+    = post.describe
+  td
+    = post.content
+  td
+    = post.user.email
+  td
+    = link_to t(".delete"), post_path(post.id), method: :delete, data: {confirm: t(".you_sure")}, remote: :true, class: "destroy-post"
+    br
+    = link_to t(".edit"), edit_post_path(post.id)

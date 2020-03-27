@@ -65,7 +65,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap-sass'
 gem 'paperclip', '~> 5.1'
 gem 'simple_form'
 gem 'slim'
@@ -79,4 +79,5 @@ gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'config'
 gem 'ransack'
+gem 'jquery-ui-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

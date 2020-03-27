@@ -1,0 +1,8 @@
+/*
+ *= require @coreui/coreui/dist/css/bootstrap.min.css
+ *= require @coreui/coreui/dist/css/coreui-standalone.min.css
+ *= require @coreui/coreui/dist/css/coreui.min.css
+ *= require jquery-ui
+ *= require_tree .
+ *= require_self
+ */
