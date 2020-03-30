@@ -4,10 +4,7 @@ $( function() {
     url: "/search_post",
     success: function (data) {
       $( "#search" ).autocomplete({
-        source: data.posts,
-        select: function(event, ui) {
-          window.open(ui.item.url);
-        }
+        source: data.posts
       });
      }
   })
