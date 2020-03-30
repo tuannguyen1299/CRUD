@@ -80,4 +80,5 @@ gem 'bootstrap4-kaminari-views'
 gem 'config'
 gem 'ransack'
 gem 'jquery-ui-rails'
+gem 'grape'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
